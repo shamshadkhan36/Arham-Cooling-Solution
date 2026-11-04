@@ -3,6 +3,10 @@ export interface ServiceItem {
   title: string;
   category: 'ac' | 'refrigerator' | 'diagnostic';
   icon: string;
+  image: string;
+  price: string;
+  originalPrice?: string;
+  priceNote?: string;
   shortDesc: string;
   features: string[];
   popular?: boolean;

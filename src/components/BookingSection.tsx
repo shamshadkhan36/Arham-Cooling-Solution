@@ -297,11 +297,19 @@ _Sent via Arham Cooling Solution Website_`;
                       >
                         {SERVICES_DATA.map((srv) => (
                           <option key={srv.id} value={srv.title}>
-                            {srv.title}
+                            {srv.title} (Starts at {srv.price})
                           </option>
                         ))}
                       </select>
                     </div>
+                    {(() => {
+                      const sel = SERVICES_DATA.find((s) => s.title === formData.service);
+                      return sel ? (
+                        <p className="text-[11px] text-brand-700 font-semibold mt-1">
+                          Estimated rate: <span className="font-bold text-navy-950">{sel.price}</span> ({sel.priceNote})
+                        </p>
+                      ) : null;
+                    })()}
                   </div>
 
                   <div>
